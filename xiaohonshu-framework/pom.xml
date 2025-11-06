@@ -21,6 +21,7 @@
     <modules>
        <module>xiaohonshu-spring-boot-starter-biz-operationlog</module>
         <module>xiaohonshu-common</module>
+        <module>xiaohonshu-spring-boot-starter-jackson</module>
     </modules>
 
 </project>

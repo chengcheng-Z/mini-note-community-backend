@@ -58,6 +58,12 @@
             <groupId>com.quanxiaoha</groupId>
             <artifactId>xiaoha-spring-boot-starter-biz-operationlog</artifactId>
         </dependency>
+        <!-- 自定义jackson配置 -->
+        <dependency>
+            <groupId>com.quanxiaoha</groupId>
+            <artifactId>xiaoha-spring-boot-starter-jackson</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
