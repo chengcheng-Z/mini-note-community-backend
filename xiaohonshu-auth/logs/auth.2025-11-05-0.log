@@ -1,0 +1,20 @@
+2025-11-05 14:18:56.089 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 9928 (started by topwinner in D:\xiaoHonShu\xiaoHonShu\xiaohonshu-auth)
+2025-11-05 14:18:56.090 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - The following 1 profile is active: "dev"
+2025-11-05 14:18:57.425 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-05 14:18:57.950 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-05 14:18:58.377 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - Started DruidTests in 2.694 seconds (process running for 3.422)
+2025-11-05 14:18:58.963 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEArkFetzcWHztKOeElbK9BQ7nQ4jUNbDZOW/pZn/Z/ED7siWwgby5UZMkNW3KgOZCDVnRrZ01Cm19U72MFLgceUwIDAQABAkAQFGEol/E3JZH2YFPDQTLNDJb9YLbh3usBKstdavITrgvI+68jYXYWFEcga94txPWu/YCmAEYvKKzHBcDRdc99AiEAzjLbgcVaHXVJzlQd5pd82M9m5YHiq5wbkB7v6Fiwqi8CIQDYV3nyM7LWavvh+bi6qhfAy8qXS1U0XhJ59rdQw97ZHQIgXrjqMXERdprcrtXhbn6EsayFHkVOdXsfBlPP7bJgZa0CIGEbetBdplOad+9p8SJQgRL4JrqchOVZqH94X7ZwBRJ9AiEAyo0P61WEs/87S61+sLRLazAtyVRjCGEw3jAGCgLGVHY=
+2025-11-05 14:18:58.967 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAK5BXrc3Fh87SjnhJWyvQUO50OI1DWw2Tlv6WZ/2fxA+7IlsIG8uVGTJDVtyoDmQg1Z0a2dNQptfVO9jBS4HHlMCAwEAAQ==
+2025-11-05 14:18:58.970 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - password: pPtIyH1QyRP8q6RxMLFqpV9uXEjNRdtFS2aeuRkWFOVcjh+MVm8dBiQvCE4njn8X4lVFlh1py4ANpN39q7XZSg==
+2025-11-05 14:18:58.987 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-05 14:18:58.998 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-11-05 14:24:12.054 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - Starting DruidTests using Java 17.0.12 with PID 9992 (started by topwinner in D:\xiaoHonShu\xiaoHonShu\xiaohonshu-auth)
+2025-11-05 14:24:12.055 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - The following 1 profile is active: "dev"
+2025-11-05 14:24:13.450 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-05 14:24:14.138 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-05 14:24:14.799 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - Started DruidTests in 3.446 seconds (process running for 4.677)
+2025-11-05 14:24:15.333 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - privateKey: MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAkFQKQFtKgdoY8YiRHX88t2+i0Q6sJMDeJogZb3JfLCHCWbg6pzajum7dxq07oAvqxs7KIfu5SQymEU6LuMo54wIDAQABAkAtd2QRWRD0LiYcdLauUaZpbRAgBpzBKUbyYX6NxrxnlK9lSRBSSd40/jGMb6Dbq/gYf13ss2gDBO2ma2BS1rMxAiEA/A76V310h55xeGSKY18F3E2M++Tl+ykPDQ49RrrpTLMCIQCSlc3ubh9Glij5f0+GFUEoJ2/9WDfAr7rUMraeJlhWEQIgKZpLRZ+GWVAUiHuHv+kSLY97QqRANVlMi6obAQ6erTMCIFBO1FjZajcg02gFkMrz4BOgr6FL8JeXbzMMabJxbZoRAiEAwiknYbMr9EZcruy6xI7gjPAl6mgryz2GaMkPPgc0fEk=
+2025-11-05 14:24:15.336 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJBUCkBbSoHaGPGIkR1/PLdvotEOrCTA3iaIGW9yXywhwlm4Oqc2o7pu3catO6AL6sbOyiH7uUkMphFOi7jKOeMCAwEAAQ==
+2025-11-05 14:24:15.338 [main] INFO  com.quanxiaoha.xiaohonshu.auth.DruidTests - password: fEs1yk/vRBSwEoXwAcdZw/hoVCdllDTBgLdC43ZxnwYbL3ejxcZb6KwXFD0YN3xuxQs1QhyunvWx0BfbUDGvKA==
+2025-11-05 14:24:15.353 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-05 14:24:15.359 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
