@@ -19,9 +19,9 @@
     <description>平台基础设施层：封装一些常用功能，供各个业务线拿来即用</description>
 
     <modules>
-       <module>xiaohonshu-spring-boot-starter-biz-operationlog</module>
-        <module>xiaohonshu-common</module>
-        <module>xiaohonshu-spring-boot-starter-jackson</module>
+       <module>xiaoha-spring-boot-starter-biz-operationlog</module>
+        <module>xiaoha-common</module>
+        <module>xiaoha-spring-boot-starter-jackson</module>
     </modules>
 
 </project>

@@ -1,0 +1,17 @@
+2025-11-06 17:24:24.056 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Starting XiaohonshuAuthApplication using Java 17.0.12 with PID 14204 (D:\xiaoHonShu\xiaoHonShu\xiaohonshu-auth\target\classes started by topwinner in D:\xiaoHonShu\xiaoHonShu)
+2025-11-06 17:24:24.056 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - The following 1 profile is active: "dev"
+2025-11-06 17:24:24.852 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-11-06 17:24:24.867 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-06 17:24:24.867 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-11-06 17:24:24.931 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-06 17:24:24.931 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 851 ms
+2025-11-06 17:24:25.206 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-06 17:24:25.401 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-06 17:24:25.624 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-06 17:24:25.629 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Started XiaohonshuAuthApplication in 1.938 seconds (process running for 2.315)
+2025-11-06 17:24:52.812 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-06 17:24:52.814 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-06 17:24:52.816 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-11-06 17:24:52.868 [http-nio-8080-exec-1] WARN  o.s.core.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.quanxiaoha.xiaohonshu.auth.controller.TestController
+2025-11-06 17:25:49.133 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-06 17:25:49.138 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
