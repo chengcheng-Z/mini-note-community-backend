@@ -12,7 +12,7 @@ public class RedisTemplateConfig {
     @Bean
     public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory connectionFactory){
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
-        // 设置 RedisTemplate 的连接工厂
+        // 设置 RedisTemplate 的连接工厂//
         redisTemplate.setConnectionFactory(connectionFactory);
 
         // 使用 StringRedisSerializer 来序列化和反序列化 redis 的 key 值，确保 key 是可读的字符串
