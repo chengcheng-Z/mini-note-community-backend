@@ -1,0 +1,24 @@
+2025-11-11 14:42:30.774 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 27204 (started by topwinner in D:\xiaoHonShu\xiaoHonShu\xiaohashu-auth)
+2025-11-11 14:42:30.774 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - The following 1 profile is active: "dev"
+2025-11-11 14:42:31.563 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-11 14:42:31.579 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-11 14:42:31.611 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2025-11-11 14:42:34.046 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-11 14:42:34.922 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-11 14:42:35.749 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - Started RedisTests in 5.555 seconds (process running for 6.477)
+2025-11-11 14:42:37.078 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - value 值：犬小哈
+2025-11-11 14:42:37.125 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - key 是否存在：false
+2025-11-11 14:42:37.125 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-11 14:42:37.125 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-11-11 15:21:43.485 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - Starting RedisTests using Java 17.0.12 with PID 9208 (started by topwinner in D:\xiaoHonShu\xiaoHonShu\xiaohashu-auth)
+2025-11-11 15:21:43.489 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - The following 1 profile is active: "dev"
+2025-11-11 15:21:46.590 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-11 15:21:46.607 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-11 15:21:46.714 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
+2025-11-11 15:21:53.636 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-11 15:21:54.271 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-11 15:21:55.145 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - Started RedisTests in 13.084 seconds (process running for 15.654)
+2025-11-11 15:21:56.436 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - value 值：null
+2025-11-11 15:21:56.491 [main] INFO  com.quanxiaoha.xiaohonshu.auth.RedisTests - key 是否存在：false
+2025-11-11 15:21:56.496 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-11 15:21:56.509 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
