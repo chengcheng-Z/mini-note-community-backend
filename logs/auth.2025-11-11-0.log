@@ -90,3 +90,23 @@
 2025-11-11 16:36:28.861 [AuthExecutor-4] INFO  c.quanxiaoha.xiaohonshu.auth.sms.AliyunSmsHelper - ==> 短信发送成功, response: {"headers":{"access-control-allow-origin":"*","date":"Tue, 11 Nov 2025 08:36:39 GMT","content-length":"110","keep-alive":"timeout=25","x-acs-request-id":"243FDDBD-892E-5F90-90DD-0CD3FA1B338B","connection":"keep-alive","content-type":"application/json;charset=utf-8","etag":"1V+Y21ZnuItWFaNnX/jXv1A0","access-control-expose-headers":"*","x-acs-trace-id":"18d86f7cb823124636cd711d1dce8133"},"statusCode":200,"body":{"bizId":"298120662850199457^0","code":"OK","message":"OK","requestId":"243FDDBD-892E-5F90-90DD-0CD3FA1B338B"}}
 2025-11-11 16:45:02.345 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2025-11-11 16:45:02.346 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-11-11 18:01:11.910 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Starting XiaohonshuAuthApplication using Java 17.0.12 with PID 23056 (D:\xiaoHonShu\xiaoHonShu\xiaohashu-auth\target\classes started by topwinner in D:\xiaoHonShu\xiaoHonShu)
+2025-11-11 18:01:11.910 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - The following 1 profile is active: "dev"
+2025-11-11 18:01:12.588 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-11 18:01:12.591 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-11 18:01:12.622 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-11-11 18:01:13.397 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-11-11 18:01:13.415 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-11 18:01:13.415 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-11-11 18:01:13.551 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-11 18:01:13.551 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1591 ms
+2025-11-11 18:01:14.533 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-11 18:01:15.006 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-11 18:01:15.614 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-11 18:01:15.624 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Started XiaohonshuAuthApplication in 4.629 seconds (process running for 5.324)
+2025-11-11 18:02:16.409 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-11 18:02:16.409 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-11 18:02:16.409 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-11-11 18:02:16.761 [http-nio-8080-exec-1] WARN  c.q.x.auth.exception.GlobalExceptionHandler - /verification/code/send request error, errorCode: AUTH-10001, errorMessage: phone 手机号格式不正确, 需为 11 位数字, 当前值: '193796837920'; 
+2025-11-11 18:02:41.724 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-11 18:02:41.740 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

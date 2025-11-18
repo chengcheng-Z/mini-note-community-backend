@@ -157,6 +157,12 @@
         <scope>import</scope>
       </dependency>
 
+      <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+      <dependency>
+        <groupId>cn.dev33</groupId>
+        <artifactId>sa-token-redis-jackson</artifactId>
+        <version>${sa-token.version}</version>
+      </dependency>
 
       <!-- 避免编写那些冗余的 Java 样板式代码，如 get、set 等 -->
       <dependency>
