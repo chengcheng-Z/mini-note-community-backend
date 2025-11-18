@@ -1,0 +1,27 @@
+2025-11-12 13:21:48.733 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Starting XiaohonshuAuthApplication using Java 17.0.12 with PID 27444 (D:\xiaoHonShu\xiaoHonShu\xiaohashu-auth\target\classes started by topwinner in D:\xiaoHonShu\xiaoHonShu)
+2025-11-12 13:21:48.733 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - The following 1 profile is active: "dev"
+2025-11-12 13:21:49.387 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-12 13:21:49.403 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-11-12 13:21:49.418 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2025-11-12 13:21:50.180 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-11-12 13:21:50.201 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-11-12 13:21:50.201 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-11-12 13:21:50.299 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-11-12 13:21:50.300 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1515 ms
+2025-11-12 13:21:50.409 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-11-12 13:21:50.781 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-11-12 13:21:51.913 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-11-12 13:21:51.920 [main] INFO  c.q.xiaohonshu.auth.XiaohonshuAuthApplication - Started XiaohonshuAuthApplication in 3.721 seconds (process running for 4.383)
+2025-11-12 13:22:13.041 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-12 13:22:13.041 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-11-12 13:22:13.041 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-11-12 13:22:13.453 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [发送验证码], 入参: {"phone":"19379683792"}, 请求类: VerificationCodeController, 请求方法: send =================================== 
+2025-11-12 13:22:14.324 [http-nio-8080-exec-2] INFO  c.q.x.a.service.impl.VerificationCodeServiceImpl - ==> 手机号: 19379683792, 已发送验证码：【883637】
+2025-11-12 13:22:14.324 [AuthExecutor-1] INFO  c.quanxiaoha.xiaohonshu.auth.sms.AliyunSmsHelper - ==> 开始短信发送, phone: 19379683792, signName: 阿里云短信测试, templateCode: SMS_154950909, templateParam: {"code":"883637"}
+2025-11-12 13:22:14.340 [http-nio-8080-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [发送验证码], 耗时: 895ms, 出参: {"success":true,"message":null,"errorCode":null,"data":null} =================================== 
+2025-11-12 13:22:15.801 [AuthExecutor-1] INFO  c.quanxiaoha.xiaohonshu.auth.sms.AliyunSmsHelper - ==> 短信发送成功, response: {"headers":{"access-control-allow-origin":"*","date":"Wed, 12 Nov 2025 05:22:26 GMT","content-length":"110","keep-alive":"timeout=25","x-acs-request-id":"3C6BCB09-4217-592F-A9FC-9490D8DC6080","connection":"keep-alive","content-type":"application/json;charset=utf-8","etag":"1h6x+lBhJrkmlsuG9O+MCzQ0","access-control-expose-headers":"*","x-acs-trace-id":"7c9494947927ef443f6346ac973d086c"},"statusCode":200,"body":{"bizId":"841825362924946565^0","code":"OK","message":"OK","requestId":"3C6BCB09-4217-592F-A9FC-9490D8DC6080"}}
+2025-11-12 13:23:19.928 [http-nio-8080-exec-7] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [用户登录/注册], 入参: {"phone":"19379683792","code":"883637","password":null,"type":1}, 请求类: UserController, 请求方法: loginAndRegister =================================== 
+2025-11-12 13:23:20.605 [http-nio-8080-exec-7] INFO  c.q.xiaohonshu.auth.service.impl.UserServiceImpl - ==> 用户是否注册, phone: 19379683792, userDO: null
+2025-11-12 13:23:21.167 [http-nio-8080-exec-7] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [用户登录/注册], 耗时: 1239ms, 出参: {"success":true,"message":null,"errorCode":null,"data":"19a4b384-7f3d-4482-90d5-c9f01c11d2e3"} =================================== 
+2025-11-12 13:23:58.421 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-11-12 13:23:58.430 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
