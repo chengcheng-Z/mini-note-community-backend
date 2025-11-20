@@ -11,8 +11,10 @@ import com.quanxiaoha.framework.common.response.Response;
 import com.quanxiaoha.framework.common.util.JsonUtils;
 import com.quanxiaoha.xiaohonshu.auth.constant.RedisKeyConstants;
 import com.quanxiaoha.xiaohonshu.auth.constant.RoleConstants;
+import com.quanxiaoha.xiaohonshu.auth.domain.dataobject.RoleDO;
 import com.quanxiaoha.xiaohonshu.auth.domain.dataobject.UserDO;
 import com.quanxiaoha.xiaohonshu.auth.domain.dataobject.UserRoleDO;
+import com.quanxiaoha.xiaohonshu.auth.domain.mapper.RoleDOMapper;
 import com.quanxiaoha.xiaohonshu.auth.domain.mapper.UserRoleDOMapper;
 import com.quanxiaoha.xiaohonshu.auth.enums.LoginTypeEnum;
 import com.quanxiaoha.xiaohonshu.auth.enums.ResponseCodeEnum;
@@ -26,6 +28,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
@@ -44,6 +47,8 @@ public class UserServiceImpl implements UserService {
     private UserRoleDOMapper userRoleDOMapper;
     @Autowired
     private TransactionTemplate transactionTemplate;
+    @Autowired
+    private RoleDOMapper roleDOMapper;
 
     @Override
     public Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO) {
@@ -103,7 +108,16 @@ public class UserServiceImpl implements UserService {
         return Response.success(tokenInfo.tokenValue);
 
     }
-      //自动注册
+
+    @Override
+    public Response<?> logout(Long userId) {
+        // 退出登录 (指定用户 ID)
+        StpUtil.logout(userId);
+
+        return Response.success();
+    }
+
+    //自动注册
     @Transactional(rollbackFor = Exception.class)
     public Long registerUser(String phone) {
         return transactionTemplate.execute(status -> {
@@ -133,11 +147,11 @@ public class UserServiceImpl implements UserService {
                         .isDeleted(DeletedEnum.NO.getValue())
                         .build();
                 userRoleDOMapper.insert(userRoleDO);
-
+                 RoleDO roleDO =roleDOMapper.selectByPrimaryKey(RoleConstants.COMMON_USER_ROLE_ID);
                 //将用户ID存入redis
-                List<Long> roles = Lists.newArrayList();
-                roles.add(RoleConstants.COMMON_USER_ROLE_ID);
-                String userRoleKey = RedisKeyConstants.buildUserRoleKey(phone);
+                List<String> roles = new ArrayList<>(1);
+                roles.add(roleDO.getRoleKey());
+                String userRoleKey = RedisKeyConstants.buildUserRoleKey(userId);
                 redisTemplate.opsForValue().set(userRoleKey, JsonUtils.toJsonString(roles));
                 return userId;
             }catch (Exception e){

@@ -6,4 +6,7 @@ import com.quanxiaoha.xiaohonshu.auth.model.vo.user.UserLoginReqVO;
 public interface UserService {
     //登录与注册
     Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO);
+
+    //登出
+    Response<?> logout(Long userId);
 }

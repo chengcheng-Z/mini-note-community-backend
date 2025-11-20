@@ -21,6 +21,7 @@
     <!-- 认证服务 -->
     <module>xiaohashu-auth</module>
     <module>xiaoha-framework</module>
+      <module>xiaohashu-gateway</module>
 
   </modules>
 
@@ -59,6 +60,12 @@
   <!-- 统一依赖管理 -->
   <dependencyManagement>
     <dependencies>
+
+      <dependency>
+        <groupId>cn.dev33</groupId>
+        <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
+        <version>${sa-token.version}</version>
+      </dependency>
       <!-- Nacos 配置中心 -->
       <dependency>
         <groupId>com.alibaba.boot</groupId>
