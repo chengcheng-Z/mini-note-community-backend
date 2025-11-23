@@ -3,7 +3,7 @@ package com.quanxiaoha.xiaohonshu.auth.service.impl;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.Lists;
+import com.quanxiaoha.framework.biz.context.holder.LoginUserContextHolder;
 import com.quanxiaoha.framework.common.enums.DeletedEnum;
 import com.quanxiaoha.framework.common.enums.StatusEnum;
 import com.quanxiaoha.framework.common.exception.BizException;
@@ -18,13 +18,16 @@ import com.quanxiaoha.xiaohonshu.auth.domain.mapper.RoleDOMapper;
 import com.quanxiaoha.xiaohonshu.auth.domain.mapper.UserRoleDOMapper;
 import com.quanxiaoha.xiaohonshu.auth.enums.LoginTypeEnum;
 import com.quanxiaoha.xiaohonshu.auth.enums.ResponseCodeEnum;
+import com.quanxiaoha.xiaohonshu.auth.model.vo.user.UpdatePasswordReqVO;
 import com.quanxiaoha.xiaohonshu.auth.service.UserService;
 import com.quanxiaoha.xiaohonshu.auth.model.vo.user.UserLoginReqVO;
 import com.quanxiaoha.xiaohonshu.auth.domain.mapper.UserDOMapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -50,22 +53,41 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RoleDOMapper roleDOMapper;
 
+    @Resource
+    private PasswordEncoder passwordEncoder;
+
+
     @Override
     public Response<String> loginAndRegister(UserLoginReqVO userLoginReqVO) {
             //1获得手机号
           String phone = userLoginReqVO.getPhone();
            //2获得登录类型
-         int type = userLoginReqVO.getType();
+         Integer type = userLoginReqVO.getType();
         LoginTypeEnum loginTypeEnum =LoginTypeEnum.valueOf(type);
+        if(Objects.isNull(loginTypeEnum)){
+            throw new BizException(ResponseCodeEnum.LOGIN_TYPE_ERROR);
+        }
         Long userId =null;
            //3.判断登录类型
             switch (loginTypeEnum) {
                 case PASSWORD :
                     //TODO
                     //4.登录类型为密码登录
+                    String password =userLoginReqVO.getPassword();
                     //4.1.通过手机号查询密码
-                    // 4.2 密码正确，satoken登录用户
+                    UserDO userDO1 =userDOMapper.selectByPhone(phone);
+                    if(Objects.isNull(userDO1)){
+                        throw new BizException(ResponseCodeEnum.USER_NOT_FOUND);
+                    }
+
+                     String encodePassword =userDO1.getPassword();
+                    boolean isCorrect =passwordEncoder.matches(password,encodePassword);
                     //4.3.密码错误，返回错误
+                    if(!isCorrect){
+                        throw new BizException(ResponseCodeEnum.PHONE_OR_PASSWORD_ERROR);
+                    }
+                    // 4.2 密码正确，satoken登录用户
+                    userId =userDO1.getId();
                     break;
                 //5.登录类型为验证码登录
                 case VERIFICATION_CODE:
@@ -110,10 +132,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Response<?> logout(Long userId) {
+    public Response<?> logout() {
         // 退出登录 (指定用户 ID)
+        Long userId = LoginUserContextHolder.getUserId();
+        log.info("==>用户退出登录，userId:{}",userId);
         StpUtil.logout(userId);
 
+        return Response.success();
+    }
+
+    @Override
+    public Response<?> updatePassword(UpdatePasswordReqVO updatePasswordReqVO) {
+        String newPassword = updatePasswordReqVO.getNewPassword();
+        String encodePassword = passwordEncoder.encode(newPassword);
+        Long userId = LoginUserContextHolder.getUserId();
+        UserDO userDO =UserDO.builder()
+                .id(userId)
+                .password(encodePassword)
+                .updateTime(LocalDateTime.now())
+                .build();
+        // 更新密码
+        userDOMapper.updateByPrimaryKeySelective(userDO);
         return Response.success();
     }
 

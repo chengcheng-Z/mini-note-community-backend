@@ -21,11 +21,13 @@
     <!-- 认证服务 -->
     <module>xiaohashu-auth</module>
     <module>xiaoha-framework</module>
-      <module>xiaohashu-gateway</module>
+     <module>xiaohashu-gateway</module>
+    <module>xiaoha-framework/xiaoha-spring-boot-starter-biz-context</module>
 
   </modules>
 
   <properties>
+    <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
     <nacos-config.version>0.3.0-RC</nacos-config.version>
     <dysmsapi.version>2.0.24</dysmsapi.version>
     <guava.version>33.0.0-jre</guava.version>
@@ -60,6 +62,11 @@
   <!-- 统一依赖管理 -->
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>transmittable-thread-local</artifactId>
+        <version>${transmittable-thread-local.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>cn.dev33</groupId>
