@@ -4,6 +4,12 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: note
+          uri: lb://xiaohashu-note
+          predicates:
+                - Path=/note/**
+          filters:
+                - StripPrefix=1
         - id: auth
           uri: lb://xiaohashu-auth
           predicates:
@@ -16,6 +22,7 @@ spring:
             - Path=/user/**
           filters:
             - StripPrefix=1
+
 
   data:
     redis:

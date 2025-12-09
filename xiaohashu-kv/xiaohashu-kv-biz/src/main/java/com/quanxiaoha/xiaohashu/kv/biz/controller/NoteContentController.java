@@ -34,5 +34,4 @@ public class NoteContentController {
     public Response<?> deleteNoteContent(@Validated @RequestBody DeleteNoteContentReqDTO deleteNoteContentReqDTO) {
         return noteContentService.deleteNoteContent(deleteNoteContentReqDTO);
     }
-
 }

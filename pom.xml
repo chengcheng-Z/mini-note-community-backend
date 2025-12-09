@@ -27,10 +27,13 @@
       <module>xiaohashu-user</module>
       <module>xiaohashu-kv</module>
       <module>xiaohashu-distributed-id-generator</module>
+      <module>xiaohashu-note</module>
 
   </modules>
 
   <properties>
+    <rocketmq.version>2.2.3</rocketmq.version>
+    <caffeine.version>3.1.8</caffeine.version>
     <feign-form.version>3.8.0</feign-form.version>
     <aliyun-sdk-oss.version>3.17.4</aliyun-sdk-oss.version>
     <jaxb-api.version>2.3.1</jaxb-api.version>
@@ -72,7 +75,20 @@
   <!-- 统一依赖管理 -->
   <dependencyManagement>
     <dependencies>
+      <!-- Rocket MQ -->
+      <dependency>
+        <groupId>org.apache.rocketmq</groupId>
+        <artifactId>rocketmq-spring-boot-starter</artifactId>
+        <version>${rocketmq.version}</version>
+      </dependency>
 
+
+      <!-- Caffeine 本地缓存 -->
+      <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+        <version>${caffeine.version}</version>
+      </dependency>
       <dependency>
         <groupId>com.quanxiaoha</groupId>
         <artifactId>xiaohashu-distributed-id-generator-api</artifactId>

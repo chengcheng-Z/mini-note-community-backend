@@ -1,0 +1,204 @@
+2025-12-06 19:22:56.903 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 19:22:56.968 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 19:22:57.619 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 19:22:57.632 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 19:22:57.633 [main] INFO  c.q.xiaohashu.user.biz.XiaohashuUserBizApplication - The following 1 profile is active: "dev"
+2025-12-06 19:22:58.261 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06 19:22:58.265 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-06 19:22:58.287 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-12-06 19:22:58.509 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=de324416-06ef-3474-8acf-b9914e818220
+2025-12-06 19:22:58.554 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.user.api.UserFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 19:22:58.556 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.oss.api.FileFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 19:22:58.558 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.distributed.id.generator.api.DistributedIdGeneratorFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 19:22:59.182 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
+2025-12-06 19:22:59.197 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-06 19:22:59.198 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-12-06 19:22:59.309 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-06 19:22:59.309 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1658 ms
+2025-12-06 19:22:59.429 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-06 19:22:59.850 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-06 19:23:00.571 [main] INFO  o.s.cloud.openfeign.FeignClientFactoryBean - For 'xiaohashu-oss' URL not provided. Will try picking an instance via load-balancing.
+2025-12-06 19:23:00.624 [main] INFO  o.s.cloud.openfeign.FeignClientFactoryBean - For 'xiaohashu-distributed-id-generator' URL not provided. Will try picking an instance via load-balancing.
+2025-12-06 19:23:01.896 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-06 19:23:01.985 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-06 19:23:01.991 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 19:23:01.992 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2025-12-06 19:23:01.992 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2025-12-06 19:23:01.993 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2025-12-06 19:23:02.017 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2025-12-06 19:23:02.017 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2025-12-06 19:23:02.018 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2025-12-06 19:23:02.022 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-06 19:23:02.022 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-06 19:23:02.026 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2025-12-06 19:23:02.035 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of 7c2996c4-a093-4233-b004-a5e829f4d5cf
+2025-12-06 19:23:02.055 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-12-06 19:23:02.055 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-12-06 19:23:02.055 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-12-06 19:23:02.059 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2025-12-06 19:23:02.094 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-06 19:23:03.139 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1765020182939_127.0.0.1_62309
+2025-12-06 19:23:03.139 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Notify connected event to listeners.
+2025-12-06 19:23:03.139 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2025-12-06 19:23:03.139 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-06 19:23:03.139 [main] INFO  com.alibaba.nacos.common.remote.client - [7c2996c4-a093-4233-b004-a5e829f4d5cf] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1265/0x000001f3818f1488
+2025-12-06 19:23:03.141 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] xiaohashu registering service xiaohashu-user with instance Instance{instanceId='null', ip='192.168.197.1', port=8082, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2025-12-06 19:23:03.155 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP xiaohashu-user 192.168.197.1:8082 register finished
+2025-12-06 19:23:03.433 [main] INFO  c.q.xiaohashu.user.biz.XiaohashuUserBizApplication - Started XiaohashuUserBizApplication in 7.448 seconds (process running for 8.078)
+2025-12-06 19:23:03.434 [main] INFO  c.q.x.u.biz.runner.PushRolePermissions2RedisRunner - ==>服务启动, 同步角色权限数据到redis中
+2025-12-06 19:23:03.944 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - ==>  Preparing: select id, role_key, role_name from t_role where status = 0 and is_deleted = 0
+2025-12-06 19:23:04.148 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - ==> Parameters: 
+2025-12-06 19:23:04.463 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - <==      Total: 1
+2025-12-06 19:23:04.466 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - ==>  Preparing: select id, role_key, role_name from t_role where status = 0 and is_deleted = 0
+2025-12-06 19:23:04.466 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - ==> Parameters: 
+2025-12-06 19:23:04.468 [main] DEBUG c.q.x.u.b.d.mapper.RoleDOMapper.selectEnabledList - <==      Total: 1
+2025-12-06 19:23:04.490 [main] DEBUG c.q.x.u.b.d.m.R.selectByRoleIds - ==>  Preparing: select role_id, permission_id from t_role_permission_rel where role_id in ( ? )
+2025-12-06 19:23:04.492 [main] DEBUG c.q.x.u.b.d.m.R.selectByRoleIds - ==> Parameters: 1(Long)
+2025-12-06 19:23:04.501 [main] DEBUG c.q.x.u.b.d.m.R.selectByRoleIds - <==      Total: 2
+2025-12-06 19:23:04.502 [main] DEBUG c.q.x.u.b.d.m.P.selectAppEnabledList - ==>  Preparing: select id, name, permission_key from t_permission where status = 0 and type = 3 and is_deleted = 0
+2025-12-06 19:23:04.503 [main] DEBUG c.q.x.u.b.d.m.P.selectAppEnabledList - ==> Parameters: 
+2025-12-06 19:23:04.510 [main] DEBUG c.q.x.u.b.d.m.P.selectAppEnabledList - <==      Total: 2
+2025-12-06 19:23:04.527 [main] INFO  c.q.x.u.biz.runner.PushRolePermissions2RedisRunner - ==> 服务启动，成功同步角色权限数据到 Redis 中...
+2025-12-06 19:23:15.628 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06 19:23:15.628 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-06 19:23:15.630 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-12-06 19:23:15.757 [http-nio-8082-exec-1] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:23:15.758 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:23:15.760 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:23:15.795 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:23:15.799 [http-nio-8082-exec-1] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 42ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:25:26.096 [http-nio-8082-exec-3] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:25:26.097 [http-nio-8082-exec-3] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:25:26.098 [http-nio-8082-exec-3] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:25:26.099 [http-nio-8082-exec-3] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:25:26.100 [http-nio-8082-exec-3] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 5ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:32:30.879 [http-nio-8082-exec-5] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:32:30.880 [http-nio-8082-exec-5] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:32:30.881 [http-nio-8082-exec-5] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:32:30.883 [http-nio-8082-exec-5] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:32:30.884 [http-nio-8082-exec-5] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 5ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:32:56.493 [http-nio-8082-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:32:56.493 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:32:56.495 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:32:56.497 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:32:56.498 [http-nio-8082-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 5ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:34:06.640 [http-nio-8082-exec-7] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:34:06.641 [http-nio-8082-exec-7] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:34:06.642 [http-nio-8082-exec-7] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:34:06.644 [http-nio-8082-exec-7] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:34:06.645 [http-nio-8082-exec-7] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 6ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:34:42.907 [http-nio-8082-exec-9] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:34:42.907 [http-nio-8082-exec-9] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:34:42.908 [http-nio-8082-exec-9] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:34:42.910 [http-nio-8082-exec-9] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:34:42.911 [http-nio-8082-exec-9] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 4ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:35:24.240 [http-nio-8082-exec-10] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:35:24.241 [http-nio-8082-exec-10] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:35:24.242 [http-nio-8082-exec-10] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:35:24.243 [http-nio-8082-exec-10] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:35:24.245 [http-nio-8082-exec-10] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 5ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:37:54.664 [http-nio-8082-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:37:54.668 [http-nio-8082-exec-2] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:37:54.669 [http-nio-8082-exec-2] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:37:54.671 [http-nio-8082-exec-2] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:37:54.672 [http-nio-8082-exec-2] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 8ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:39:37.631 [http-nio-8082-exec-4] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:39:37.632 [http-nio-8082-exec-4] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:39:37.633 [http-nio-8082-exec-4] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:39:37.635 [http-nio-8082-exec-4] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:39:37.636 [http-nio-8082-exec-4] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 5ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 19:44:48.933 [http-nio-8082-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 19:44:48.934 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 19:44:48.935 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 19:44:48.936 [http-nio-8082-exec-6] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 19:44:48.936 [http-nio-8082-exec-6] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 3ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
+2025-12-06 20:11:14.487 [Thread-7] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
+2025-12-06 20:11:14.487 [Thread-10] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
+2025-12-06 20:11:14.490 [Thread-7] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Destruction of the end
+2025-12-06 20:11:14.493 [Thread-10] WARN  c.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Destruction of the end
+2025-12-06 20:11:14.626 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registering from Nacos Server now...
+2025-12-06 20:11:14.627 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - [DEREGISTER-SERVICE] xiaohashu deregistering service xiaohashu-user with instance: Instance{instanceId='null', ip='192.168.197.1', port=8082, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2025-12-06 20:11:14.635 [SpringApplicationShutdownHook] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - De-registration finished.
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+2025-12-06 20:11:14.636 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Start destroying NacosRestTemplate
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] WARN  com.alibaba.nacos.client.naming - [NamingHttpClientManager] Destruction of the end
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown rpc client, set status to shutdown
+2025-12-06 20:11:14.638 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@7e3a979f[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+2025-12-06 20:11:14.639 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.common.remote.client - Close current connection 1765020182939_127.0.0.1_62309
+2025-12-06 20:11:14.643 [nacos-grpc-client-executor-127.0.0.1-635] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - [1765020182939_127.0.0.1_62309]Ignore complete event,isRunning:false,isAbandon=false
+2025-12-06 20:11:14.645 [SpringApplicationShutdownHook] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@213f9aa7[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 636]
+2025-12-06 20:11:14.646 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@28a492e0[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 961]
+2025-12-06 20:11:14.646 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - [null] CredentialWatcher is stopped
+2025-12-06 20:11:14.646 [SpringApplicationShutdownHook] INFO  c.a.n.client.auth.ram.identify.CredentialService - [null] CredentialService is freed
+2025-12-06 20:11:14.647 [SpringApplicationShutdownHook] INFO  com.alibaba.nacos.client.naming - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+2025-12-06 20:11:14.791 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-12-06 20:11:14.793 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-12-06 20:58:51.017 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 20:58:51.112 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 20:58:51.839 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 20:58:51.858 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 20:58:51.858 [main] INFO  c.q.xiaohashu.user.biz.XiaohashuUserBizApplication - The following 1 profile is active: "dev"
+2025-12-06 20:58:52.693 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-06 20:58:52.697 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-06 20:58:52.727 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2025-12-06 20:58:53.021 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=de324416-06ef-3474-8acf-b9914e818220
+2025-12-06 20:58:53.061 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.user.api.UserFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 20:58:53.063 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.oss.api.FileFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 20:58:53.064 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.quanxiaoha.xiaohashu.distributed.id.generator.api.DistributedIdGeneratorFeignApi' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2025-12-06 20:58:53.910 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
+2025-12-06 20:58:53.926 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-06 20:58:53.926 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2025-12-06 20:58:54.053 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-06 20:58:54.053 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2175 ms
+2025-12-06 20:58:54.187 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-12-06 20:58:54.625 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-12-06 20:58:55.502 [main] INFO  o.s.cloud.openfeign.FeignClientFactoryBean - For 'xiaohashu-oss' URL not provided. Will try picking an instance via load-balancing.
+2025-12-06 20:58:55.559 [main] INFO  o.s.cloud.openfeign.FeignClientFactoryBean - For 'xiaohashu-distributed-id-generator' URL not provided. Will try picking an instance via load-balancing.
+2025-12-06 20:58:57.107 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-06 20:58:57.220 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8082 (http) with context path ''
+2025-12-06 20:58:57.231 [main] WARN  com.alibaba.nacos.client.logging.NacosLogging - Load Logback Configuration of Nacos fail, message: Could not initialize Logback Nacos logging from classpath:nacos-logback.xml
+2025-12-06 20:58:57.231 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ans.namespace attribute : null
+2025-12-06 20:58:57.232 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+2025-12-06 20:58:57.233 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from namespace attribute :null
+2025-12-06 20:58:57.264 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [req-serv] nacos-server port:8848
+2025-12-06 20:58:57.264 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - [settings] [http-client] connect timeout:1000
+2025-12-06 20:58:57.265 [main] INFO  com.alibaba.nacos.client.utils.ParamUtil - PER_TASK_CONFIG_SIZE: 3000.0
+2025-12-06 20:58:57.271 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2025-12-06 20:58:57.272 [main] INFO  c.a.n.p.auth.spi.client.ClientAuthPluginManager - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2025-12-06 20:58:57.276 [main] INFO  c.a.n.client.auth.ram.identify.CredentialWatcher - null No credential found
+2025-12-06 20:58:57.285 [main] INFO  com.alibaba.nacos.common.remote.client - [RpcClientFactory] create a new rpc client of b0bfb570-89a6-470d-b27a-b263df4910f9
+2025-12-06 20:58:57.315 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2025-12-06 20:58:57.315 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2025-12-06 20:58:57.316 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2025-12-06 20:58:57.321 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Try to connect to server on start up, server: {serverIp = '127.0.0.1', server main port = 8848}
+2025-12-06 20:58:57.358 [main] INFO  c.a.nacos.common.remote.client.grpc.GrpcClient - grpc client connection server:127.0.0.1 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"OPENSSL","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+2025-12-06 20:58:58.956 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Success to connect to server [127.0.0.1:8848] on start up, connectionId = 1765025938716_127.0.0.1_55843
+2025-12-06 20:58:58.956 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Notify connected event to listeners.
+2025-12-06 20:58:58.956 [com.alibaba.nacos.client.remote.worker] INFO  com.alibaba.nacos.client.naming - Grpc connection connect
+2025-12-06 20:58:58.956 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2025-12-06 20:58:58.956 [main] INFO  com.alibaba.nacos.common.remote.client - [b0bfb570-89a6-470d-b27a-b263df4910f9] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1265/0x00000145278f2718
+2025-12-06 20:58:58.958 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] xiaohashu registering service xiaohashu-user with instance Instance{instanceId='null', ip='192.168.197.1', port=8082, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=null, preserved.register.source=SPRING_CLOUD}}
+2025-12-06 20:58:58.988 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP xiaohashu-user 192.168.197.1:8082 register finished
+2025-12-06 20:58:59.289 [main] INFO  c.q.xiaohashu.user.biz.XiaohashuUserBizApplication - Started XiaohashuUserBizApplication in 9.282 seconds (process running for 10.28)
+2025-12-06 20:58:59.290 [main] INFO  c.q.x.u.biz.runner.PushRolePermissions2RedisRunner - ==>服务启动, 同步角色权限数据到redis中
+2025-12-06 20:58:59.881 [main] WARN  c.q.x.u.biz.runner.PushRolePermissions2RedisRunner - ==> 角色权限数据已经同步至 Redis 中，不再同步...
+2025-12-06 21:03:18.789 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-06 21:03:18.791 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-06 21:03:18.799 [http-nio-8082-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2025-12-06 21:03:19.039 [http-nio-8082-exec-1] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求开始: [手机号查询用户信息], 入参: {"phone":"19379683792"}, 请求类: UserController, 请求方法: findByPhone =================================== 
+2025-12-06 21:03:19.100 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2025-12-06 21:03:19.443 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 19379683792(String)
+2025-12-06 21:03:19.491 [http-nio-8082-exec-1] DEBUG c.q.x.u.b.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 1
+2025-12-06 21:03:19.501 [http-nio-8082-exec-1] INFO  c.q.f.b.operationlog.aspect.ApiOperationLogAspect - ====== 请求结束: [手机号查询用户信息], 耗时: 462ms, 出参: {"success":true,"message":null,"errorCode":null,"data":{"id":2,"password":"$2a$10$cjk0DlyZf2CHrqKDGbk89O0CN9PtXVHBz3OVLB8IhRlk8pVkpJYAm"}} =================================== 
