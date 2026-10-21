@@ -1,0 +1,10 @@
+.sentinel {
+  height: 1px;
+}
+
+.status {
+  margin: var(--space-4) 0 var(--space-6);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  text-align: center;
+}

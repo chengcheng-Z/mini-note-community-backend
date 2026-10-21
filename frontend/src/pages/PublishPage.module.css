@@ -1,0 +1,251 @@
+.page {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 var(--space-4);
+  font-size: 20px;
+}
+
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.modeRow {
+  display: inline-flex;
+  gap: var(--space-2);
+  padding: var(--space-1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  justify-self: start;
+}
+
+.mode {
+  padding: var(--space-2) var(--space-6);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+.active {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.section {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.counter {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-surface-2);
+  border-radius: 10px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: var(--space-1);
+  background: rgba(0, 0, 0, 0.62);
+  color: #ffffff;
+  font-size: 11px;
+  text-align: center;
+}
+
+.remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-content: center;
+  background: rgba(0, 0, 0, 0.62);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.addTile {
+  display: grid;
+  aspect-ratio: 1;
+  place-content: center;
+  background: var(--color-surface-2);
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-secondary);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.addTile:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.videoPicker {
+  display: grid;
+  min-height: 160px;
+  place-content: center;
+  background: var(--color-surface-2);
+  border: 1px dashed var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.videoPicker:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.videoPreview {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.videoPreview video {
+  width: 100%;
+  max-height: 360px;
+  background: #000000;
+  border-radius: 10px;
+}
+
+.videoMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.videoMeta > span:first-child {
+  flex: 1;
+  overflow: hidden;
+  color: var(--color-text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text);
+  font: inherit;
+  outline: none;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.fileError {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+.retry {
+  padding: 2px var(--space-3);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text);
+  font-size: 12px;
+}
+
+.error {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.submit {
+  height: 48px;
+  background: var(--gradient-brand);
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

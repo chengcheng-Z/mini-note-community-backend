@@ -1,0 +1,20 @@
+.grid {
+  columns: 2;
+  column-gap: var(--space-3);
+}
+
+.grid > * {
+  break-inside: avoid;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    columns: 5;
+  }
+}

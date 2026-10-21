@@ -1,0 +1,93 @@
+.card {
+  display: block;
+  margin: 0 0 var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  break-inside: avoid;
+  overflow: hidden;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: rgba(254, 44, 85, 0.5);
+  transform: translateY(-2px);
+}
+
+.link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.coverWrap {
+  position: relative;
+  background: var(--color-surface-2);
+}
+
+.media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.duration {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  padding: 2px var(--space-2);
+  background: rgba(0, 0, 0, 0.62);
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.body {
+  padding: var(--space-3);
+}
+
+.title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-primary);
+}

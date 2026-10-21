@@ -1,0 +1,86 @@
+.skeleton {
+  display: block;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.skeletonCover {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(
+    100deg,
+    var(--color-surface-2) 20%,
+    #2d2d35 40%,
+    var(--color-surface-2) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeletonLine,
+.skeletonLineShort {
+  height: 12px;
+  margin: var(--space-3) var(--space-3) 0;
+  background: var(--color-surface-2);
+  border-radius: 6px;
+}
+
+.skeletonLineShort {
+  width: 55%;
+  margin-bottom: var(--space-3);
+}
+
+.state {
+  display: grid;
+  min-height: 40dvh;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.stateDot {
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-brand);
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.stateTitle {
+  margin: 0;
+  font-size: 16px;
+}
+
+.stateText {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.retryButton {
+  padding: var(--space-2) var(--space-6);
+  background: var(--gradient-brand);
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -120% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonCover {
+    animation: none;
+  }
+}
