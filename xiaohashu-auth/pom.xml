@@ -42,10 +42,6 @@
             <groupId>com.quanxiaoha</groupId>
             <artifactId>xiaohashu-user-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.quanxiaoha</groupId>
-            <artifactId>xiaohashu-user-api</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
