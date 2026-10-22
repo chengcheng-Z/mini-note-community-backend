@@ -1,0 +1,77 @@
+name: build-and-push-images
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: build-images-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  build-and-push:
+    needs: ci
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      ACR_REGISTRY: ${{ secrets.ACR_REGISTRY }}
+      ACR_NAMESPACE: ${{ secrets.ACR_NAMESPACE }}
+      ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+      ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Build jars
+        run: mvn -B -DskipTests package
+
+      - name: Login to Aliyun ACR
+        run: echo "$ACR_PASSWORD" | docker login "$ACR_REGISTRY" -u "$ACR_USERNAME" --password-stdin
+
+      - name: Build and push images
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_SHA}"
+          PREFIX="${ACR_REGISTRY}/${ACR_NAMESPACE}"
+          services=(
+            "distributed-id-generator=xiaohashu-distributed-id-generator/xiaohashu-distributed-id-generator-biz/target/xiaohashu-distributed-id-generator-biz-0.0.1-SNAPSHOT.jar"
+            "auth=xiaohashu-auth/target/xiaohashu-auth-0.0.1-SNAPSHOT.jar"
+            "user=xiaohashu-user/xiaohashu-user-biz/target/xiaohashu-user-biz-0.0.1-SNAPSHOT.jar"
+            "kv=xiaohashu-kv/xiaohashu-kv-biz/target/xiaohashu-kv-biz-0.0.1-SNAPSHOT.jar"
+            "oss=xiaohashu-oss/xiaohashu-oss-biz/target/xiaohashu-oss-biz-0.0.1-SNAPSHOT.jar"
+            "note=xiaohashu-note/xiaohashu-note-biz/target/xiaohashu-note-biz-0.0.1-SNAPSHOT.jar"
+            "user-relation=xiaohashu-user-relation/xiaohashu-user-relation-biz/target/xiaohashu-user-relation-biz-0.0.1-SNAPSHOT.jar"
+            "count=xiaohashu-count/xiaohashu-count-biz/target/xiaohashu-count-biz-0.0.1-SNAPSHOT.jar"
+            "gateway=xiaohashu-gateway/target/xiaohashu-gateway-0.0.1-SNAPSHOT.jar"
+          )
+          for item in "${services[@]}"; do
+            name="${item%%=*}"
+            jar="${item#*=}"
+            image="${PREFIX}/${name}:${TAG}"
+            echo "==> ${image}"
+            docker build --build-arg "JAR_FILE=${jar}" -t "${image}" .
+            docker push "${image}"
+          done
+
+      - name: Summary
+        run: |
+          echo "### Images pushed" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Tag: `${{ github.sha }}`' >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo 'Deploy: `./deploy/deploy.sh ${{ github.sha }}`' >> "$GITHUB_STEP_SUMMARY"

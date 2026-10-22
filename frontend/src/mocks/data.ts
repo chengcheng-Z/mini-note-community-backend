@@ -165,6 +165,7 @@ export function listFeed(
   pageNo: number,
   pageSize: number,
   tab: FeedTab,
+  noteType?: 0 | 1,
 ): {
   items: NoteFeedItem[];
   pageNo: number;
@@ -174,12 +175,16 @@ export function listFeed(
 } {
   const safePageNo = Math.max(1, pageNo);
   const safePageSize = Math.max(1, pageSize);
-  const filtered =
+  const tabFiltered =
     tab === "mine"
       ? notes.filter((note) => note.creator.id === ME.id)
       : tab === "follow"
         ? notes.filter((note) => note.creator.id !== ME.id)
         : notes;
+  const filtered =
+    noteType === undefined
+      ? tabFiltered
+      : tabFiltered.filter((note) => note.type === noteType);
   const start = (safePageNo - 1) * safePageSize;
   const items = filtered.slice(start, start + safePageSize).map(toFeedItem);
 

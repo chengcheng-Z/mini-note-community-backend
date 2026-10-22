@@ -95,13 +95,17 @@ export const handlers = [
       pageNo?: number;
       pageSize?: number;
       tab?: FeedTab;
+      noteType?: number;
     };
+    const noteType =
+      body.noteType === 0 || body.noteType === 1 ? body.noteType : undefined;
 
     return page(
       listFeed(
         Number(body.pageNo) || 1,
         Number(body.pageSize) || 10,
         body.tab ?? "recommend",
+        noteType,
       ),
     );
   }),

@@ -78,7 +78,7 @@ frontend/
 | `/profile/:userId` | 他人主页（P1） | 否 |
 | `*` | 404 | 否 |
 
-布局：移动端底部 TabBar（首页、发布、我的）；桌面端左侧导航栏 + 居中内容区，最大宽度 1200px。
+布局：移动端底部 TabBar（首页、发布、我的）+ 顶部类型筛选；桌面端左侧导航栏（发现、视频、笔记、直播、发布、我的）+ 居中内容区，最大宽度 1200px。直播暂无可对接接口，显示“直播功能准备中”。
 
 ## API 契约
 
@@ -114,7 +114,7 @@ frontend/
 
 | 方法 | 路径 | 入参 | 返回 | 用途 |
 |---|---|---|---|---|
-| POST | `/note/feed` | `{ pageNo, pageSize, tab: "recommend"\|"follow"\|"mine" }` | `PageResponse<NoteFeedItem>` | 首页/关注/我的作品 |
+| POST | `/note/feed` | `{ pageNo, pageSize, tab: "recommend"\|"follow"\|"mine", noteType?: 0\|1 }` | `PageResponse<NoteFeedItem>` | 首页/关注/我的作品；`noteType` 用于视频/笔记筛选 |
 | POST | `/note/like` | `{ noteId }` | `Response<null>` | 点赞 |
 | POST | `/note/unlike` | `{ noteId }` | `Response<null>` | 取消点赞 |
 | POST | `/note/liked/status` | `{ noteIds: number[] }` | `Response<Record<string, boolean>>` | 批量点赞状态 |
@@ -264,7 +264,7 @@ type NoteDetail = {
 
 ## 样式方案
 
-- 设计变量：小红书布局 + 抖音配色。主色 `#FE2C55`，辅色 `#25F4EE`，背景 `#0F0F12`，卡片 `#1A1A1F`，圆角 12px。
+- 设计变量：小红书配色。主色 `#FF2442`，背景 `#F5F5F5`，卡片白色，圆角 12px。
 - 移动优先：`< 768px` 双列，`>= 768px` 五列；底部 TabBar 在桌面端改为左侧导航。
 - 字体使用系统字体栈，避免外部字体依赖。
 - 所有可点击元素有 `:focus-visible` 样式，按钮有 `aria-label`。
@@ -323,7 +323,7 @@ type NoteDetail = {
      -d '{"id":1001}'
    ```
    同样验证 `/user/findById`、`/relation/following/list`、`/file/upload` 不再 404。
-2. **feed 列表**：`POST /note/feed` 返回 `pageNo/pageSize/totalCount/totalPage` 和卡片字段（`cover`、`creator`、`likeCount`、`liked`、`videoDuration`）。
+2. **feed 列表**：`POST /note/feed` 返回 `pageNo/pageSize/totalCount/totalPage` 和卡片字段（`cover`、`creator`、`likeCount`、`liked`、`videoDuration`）；支持 `noteType=0/1` 筛选。
 3. **点赞**：`POST /note/like`、`POST /note/unlike` 后，`/note/detail` 的 `liked` 与 `likeCount` 同步变化。
 4. **当前用户**：`POST /user/me` 返回 `{ id, nickName, avatar, introduction }`。
 5. **关注状态**：`POST /relation/status` 返回 `{ following: boolean }`。

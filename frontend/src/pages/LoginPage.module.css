@@ -4,8 +4,8 @@
   place-items: center;
   padding: var(--space-6) var(--space-4);
   background:
-    radial-gradient(900px 380px at 50% -140px, rgba(254, 44, 85, 0.28), transparent 70%),
-    radial-gradient(700px 320px at 80% 10%, rgba(37, 244, 238, 0.12), transparent 70%),
+    radial-gradient(900px 380px at 50% -140px, rgba(255, 36, 66, 0.16), transparent 70%),
+    radial-gradient(700px 320px at 80% 10%, rgba(255, 182, 193, 0.22), transparent 70%),
     var(--color-bg);
 }
 
@@ -13,11 +13,7 @@
   width: 100%;
   max-width: 380px;
   padding: var(--space-8) var(--space-6);
-  background: linear-gradient(
-    180deg,
-    rgba(35, 35, 41, 0.9),
-    rgba(26, 26, 31, 0.92)
-  );
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 20px;
   box-shadow: var(--shadow-card);

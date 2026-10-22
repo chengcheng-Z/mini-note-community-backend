@@ -22,7 +22,6 @@
     <module>xiaohashu-auth</module>
     <module>xiaoha-framework</module>
      <module>xiaohashu-gateway</module>
-    <module>xiaoha-framework/xiaoha-spring-boot-starter-biz-context</module>
       <module>xiaohashu-oss</module>
       <module>xiaohashu-user</module>
       <module>xiaohashu-kv</module>

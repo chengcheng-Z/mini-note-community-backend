@@ -1,0 +1,238 @@
+name: xiaohashu
+
+x-app-env: &app-env
+  TZ: ${TZ:-Asia/Shanghai}
+  SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
+  SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR: ${NACOS_SERVER_ADDR:-nacos:8848}
+  SPRING_CLOUD_NACOS_DISCOVERY_NAMESPACE: ${NACOS_NAMESPACE:-public}
+  SPRING_CLOUD_NACOS_DISCOVERY_GROUP: DEFAULT_GROUP
+  SPRING_CLOUD_NACOS_DISCOVERY_IP: ${DISCOVERY_IP:-}
+  SPRING_CLOUD_NACOS_CONFIG_ENABLED: "false"
+
+# 低配 JVM：小服务
+x-jvm-small: &jvm-small
+  JAVA_TOOL_OPTIONS: "-Xms96m -Xmx144m -XX:MaxMetaspaceSize=96m -Xss512k -XX:+UseSerialGC -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8"
+
+# 低配 JVM：一般服务
+x-jvm-medium: &jvm-medium
+  JAVA_TOOL_OPTIONS: "-Xms128m -Xmx176m -XX:MaxMetaspaceSize=96m -Xss512k -XX:+UseSerialGC -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8"
+
+# 低配 JVM：笔记服务
+x-jvm-note: &jvm-note
+  JAVA_TOOL_OPTIONS: "-Xms128m -Xmx208m -XX:MaxMetaspaceSize=112m -Xss512k -XX:+UseSerialGC -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8"
+
+x-mysql-env: &mysql-env
+  SPRING_DATASOURCE_URL: "jdbc:mysql://${MYSQL_HOST:-mysql}:${MYSQL_PORT:-3306}/${MYSQL_DATABASE:-xiaohashu}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true"
+  SPRING_DATASOURCE_USERNAME: ${MYSQL_USERNAME:-root}
+  SPRING_DATASOURCE_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+  SPRING_DATASOURCE_DRUID_CONNECTION_PROPERTIES: "config.decrypt=false"
+
+x-redis-env: &redis-env
+  SPRING_DATA_REDIS_HOST: ${REDIS_HOST:-redis}
+  SPRING_DATA_REDIS_PORT: ${REDIS_PORT:-6379}
+  SPRING_DATA_REDIS_PASSWORD: ${REDIS_PASSWORD:?set REDIS_PASSWORD in .env}
+
+x-rocketmq-env: &rocketmq-env
+  ROCKETMQ_NAME_SERVER: ${ROCKETMQ_NAME_SERVER:-rocketmq-namesrv:9876}
+
+x-cassandra-env: &cassandra-env
+  SPRING_CASSANDRA_CONTACT_POINTS: ${CASSANDRA_HOST:-cassandra}
+  SPRING_CASSANDRA_PORT: ${CASSANDRA_PORT:-9042}
+
+x-oss-env: &oss-env
+  STORAGE_TYPE: ${STORAGE_TYPE:-minio}
+  STORAGE_MINIO_ENDPOINT: ${MINIO_ENDPOINT:-http://minio:9000}
+  STORAGE_MINIO_PUBLIC_ENDPOINT: ${MINIO_PUBLIC_ENDPOINT:-http://localhost:9000}
+  STORAGE_MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
+  STORAGE_MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:?set MINIO_ROOT_PASSWORD in .env}
+  STORAGE_ALIYUN_OSS_ENDPOINT: ${ALIYUN_OSS_ENDPOINT:-oss-cn-hangzhou.aliyuncs.com}
+  STORAGE_ALIYUN_OSS_ACCESS_KEY: ${ALIYUN_OSS_ACCESS_KEY:-disabled}
+  STORAGE_ALIYUN_OSS_SECRET_KEY: ${ALIYUN_OSS_SECRET_KEY:-disabled}
+
+x-aliyun-env: &aliyun-env
+  ALIYUN_ACCESS_KEY_ID: ${ALIYUN_ACCESS_KEY_ID:-disabled}
+  ALIYUN_ACCESS_KEY_SECRET: ${ALIYUN_ACCESS_KEY_SECRET:-disabled}
+
+x-leaf-env: &leaf-env
+  LEAF_JDBC_URL: "jdbc:mysql://${MYSQL_HOST:-mysql}:${MYSQL_PORT:-3306}/leaf?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai"
+  LEAF_JDBC_USERNAME: ${MYSQL_USERNAME:-root}
+  LEAF_JDBC_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+  LEAF_SEGMENT_ENABLE: "true"
+  LEAF_SNOWFLAKE_ENABLE: "false"
+  LEAF_NAME: xiaohashu
+
+networks:
+  xiaohashu:
+    name: xiaohashu
+
+services:
+  distributed-id-generator:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/distributed-id-generator:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-distributed-id-generator/xiaohashu-distributed-id-generator-biz/target/xiaohashu-distributed-id-generator-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *leaf-env]
+    ports:
+      - "${DISTRIBUTED_ID_PORT:-8085}:8085"
+    volumes:
+      - ./logs/distributed-id-generator:/app/logs
+    networks:
+      - xiaohashu
+
+  auth:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/auth:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-auth/target/xiaohashu-auth-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 288m
+    environment:
+      <<: [*app-env, *jvm-small, *mysql-env, *redis-env, *aliyun-env]
+    ports:
+      - "${AUTH_PORT:-8080}:8080"
+    volumes:
+      - ./logs/auth:/app/logs
+    networks:
+      - xiaohashu
+
+  user:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/user:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-user/xiaohashu-user-biz/target/xiaohashu-user-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *mysql-env, *redis-env, *aliyun-env]
+    ports:
+      - "${USER_PORT:-8082}:8082"
+    volumes:
+      - ./logs/user:/app/logs
+    networks:
+      - xiaohashu
+
+  kv:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/kv:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-kv/xiaohashu-kv-biz/target/xiaohashu-kv-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *cassandra-env]
+    ports:
+      - "${KV_PORT:-8084}:8084"
+    volumes:
+      - ./logs/kv:/app/logs
+    networks:
+      - xiaohashu
+
+  oss:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/oss:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-oss/xiaohashu-oss-biz/target/xiaohashu-oss-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 288m
+    environment:
+      <<: [*app-env, *jvm-small, *oss-env]
+    ports:
+      - "${OSS_PORT:-8081}:8081"
+    volumes:
+      - ./logs/oss:/app/logs
+    networks:
+      - xiaohashu
+
+  note:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/note:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-note/xiaohashu-note-biz/target/xiaohashu-note-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 384m
+    environment:
+      <<: [*app-env, *jvm-note, *mysql-env, *redis-env, *rocketmq-env]
+    ports:
+      - "${NOTE_PORT:-8086}:8086"
+    volumes:
+      - ./logs/note:/app/logs
+    networks:
+      - xiaohashu
+
+  user-relation:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/user-relation:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-user-relation/xiaohashu-user-relation-biz/target/xiaohashu-user-relation-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *mysql-env, *redis-env, *rocketmq-env]
+    ports:
+      - "${USER_RELATION_PORT:-8087}:8087"
+    volumes:
+      - ./logs/user-relation:/app/logs
+    networks:
+      - xiaohashu
+
+  count:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/count:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-count/xiaohashu-count-biz/target/xiaohashu-count-biz-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *mysql-env, *redis-env, *rocketmq-env]
+    ports:
+      - "${COUNT_PORT:-8090}:8090"
+    volumes:
+      - ./logs/count:/app/logs
+    networks:
+      - xiaohashu
+
+  gateway:
+    image: ${APP_IMAGE_PREFIX:-xiaohashu}/gateway:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: xiaohashu-gateway/target/xiaohashu-gateway-0.0.1-SNAPSHOT.jar
+    restart: unless-stopped
+    init: true
+    mem_limit: 320m
+    environment:
+      <<: [*app-env, *jvm-medium, *redis-env]
+    ports:
+      - "${GATEWAY_PORT:-8000}:8000"
+    volumes:
+      - ./logs/gateway:/app/logs
+    networks:
+      - xiaohashu

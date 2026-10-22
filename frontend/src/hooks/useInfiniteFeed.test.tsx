@@ -46,4 +46,15 @@ describe("useInfiniteFeed", () => {
     );
     expect(result.current.data?.pages[1].pageNo).toBe(2);
   });
+
+  test("filters by note type", async () => {
+    const { result } = renderHook(() => useInfiniteFeed("recommend", 1), {
+      wrapper: createWrapper(),
+    });
+
+    await waitFor(() => expect(result.current.isSuccess).toBe(true));
+    expect(
+      result.current.data?.pages[0].data.every((note) => note.type === 1),
+    ).toBe(true);
+  });
 });

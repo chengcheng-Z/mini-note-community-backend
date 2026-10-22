@@ -6,8 +6,13 @@ export async function enableMocking(): Promise<void> {
   }
 
   const { worker } = await import("./browser");
-  await worker.start({
-    onUnhandledRequest: "bypass",
-    quiet: true,
-  });
+  await Promise.race([
+    worker.start({
+      onUnhandledRequest: "bypass",
+      quiet: true,
+    }),
+    new Promise<void>((resolve) => {
+      window.setTimeout(resolve, 3000);
+    }),
+  ]);
 }

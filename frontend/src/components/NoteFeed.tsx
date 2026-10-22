@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { ApiError } from "@/api/client";
-import type { FeedTab } from "@/api/types";
+import type { FeedTab, NoteType } from "@/api/types";
 import NoteCard from "@/components/NoteCard";
 import WaterfallGrid from "@/components/WaterfallGrid";
 import {
@@ -14,16 +14,18 @@ import styles from "./NoteFeed.module.css";
 
 export default function NoteFeed({
   tab,
+  noteType,
   restoreScroll = false,
   emptyTitle = "还没有内容",
   emptyDescription,
 }: {
   tab: FeedTab;
+  noteType?: NoteType;
   restoreScroll?: boolean;
   emptyTitle?: string;
   emptyDescription?: string;
 }) {
-  const feed = useInfiniteFeed(tab);
+  const feed = useInfiniteFeed(tab, noteType);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const restoredScrollRef = useRef(false);
 

@@ -7,7 +7,7 @@
 | ID | 任务 | DoD | 风险 | 依赖 | 状态 |
 |---|---|---|---|---|---|
 | B-001 | 修复网关路由 | `/note/**`、`/user/**`、`/relation/**` 经网关可访问对应控制器；`/file/**` 可访问 OSS；冒烟脚本通过 | 去掉 `StripPrefix=1` 可能影响其他调用方 | 无 | pending |
-| B-002 | 补齐 feed 与点赞接口 | `/note/feed`、`/note/like`、`/note/unlike`、`/note/liked/status` 按 `design.md` 契约返回 | 字段不一致导致前端返工 | B-001 | pending |
+| B-002 | 补齐 feed 与点赞接口 | `/note/feed`（支持 `noteType`）、`/note/like`、`/note/unlike`、`/note/liked/status` 按 `design.md` 契约返回 | 字段不一致导致前端返工 | B-001 | pending |
 | B-003 | 补齐当前用户与关注状态接口 | `/user/me`、`/relation/status` 可用，返回结构符合契约 | 登录态获取方式差异 | B-001 | pending |
 | B-004 | 解决跨域或同源代理 | 浏览器从 `http://localhost:5173` 能请求网关；或提供 nginx 代理方案 | 生产环境跨域配置遗漏 | B-001 | pending |
 

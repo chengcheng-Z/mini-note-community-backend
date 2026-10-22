@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import SideBar from "@/components/SideBar";
 import TabBar from "@/components/TabBar";
 import styles from "./Layout.module.css";
 
@@ -10,9 +11,12 @@ export default function Layout() {
           小哈书
         </Link>
       </header>
-      <main className={styles.main}>
-        <Outlet />
-      </main>
+      <div className={styles.body}>
+        <SideBar />
+        <main className={styles.main}>
+          <Outlet />
+        </main>
+      </div>
       <TabBar />
     </div>
   );

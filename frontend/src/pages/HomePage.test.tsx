@@ -11,7 +11,7 @@ import { handlers } from "@/mocks/handlers";
 
 const server = setupServer(...handlers);
 
-function renderHome() {
+function renderHome(path = "/") {
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false } },
   });
@@ -19,7 +19,7 @@ function renderHome() {
   return render(
     <QueryClientProvider client={queryClient}>
       <MemoryRouter
-        initialEntries={["/"]}
+        initialEntries={[path]}
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
         <AuthProvider>
@@ -72,5 +72,33 @@ describe("HomePage", () => {
 
     expect(await screen.findByText("内容加载失败")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "重试" })).toBeInTheDocument();
+  });
+
+  test("filters the feed to videos from the sidebar", async () => {
+    renderHome();
+
+    expect(screen.getByRole("link", { name: "视频" })).toHaveAttribute(
+      "href",
+      "/?type=video",
+    );
+    fireEvent.click(screen.getByRole("link", { name: "视频" }));
+
+    const articles = await screen.findAllByRole("article");
+    expect(screen.getAllByTestId("note-duration")).toHaveLength(
+      articles.length,
+    );
+    expect(screen.getByRole("link", { name: "视频" })).toHaveAttribute(
+      "aria-current",
+      "page",
+    );
+  });
+
+  test("shows the live placeholder", async () => {
+    renderHome("/?type=live");
+
+    expect(
+      await screen.findByText("直播功能准备中"),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("article")).not.toBeInTheDocument();
   });
 });

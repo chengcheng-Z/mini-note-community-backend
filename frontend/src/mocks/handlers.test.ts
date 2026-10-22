@@ -75,6 +75,18 @@ describe("mock handlers", () => {
     expect(second.data[0].id).not.toBe(first.data[0].id);
   });
 
+  test("filters the feed by note type", async () => {
+    const videos = await api<FeedPayload>("/note/feed", {
+      pageNo: 1,
+      pageSize: 10,
+      tab: "recommend",
+      noteType: 1,
+    });
+
+    expect(videos.data.length).toBeGreaterThan(0);
+    expect(videos.data.every((note) => note.type === 1)).toBe(true);
+  });
+
   test("returns note detail that matches the feed contract", async () => {
     const feed = await api<FeedPayload>("/note/feed", {
       pageNo: 1,

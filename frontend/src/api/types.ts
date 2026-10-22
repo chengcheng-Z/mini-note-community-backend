@@ -61,6 +61,7 @@ export type FeedRequest = {
   pageNo: number;
   pageSize: number;
   tab: FeedTab;
+  noteType?: NoteType;
 };
 
 export type LoginRequest =
