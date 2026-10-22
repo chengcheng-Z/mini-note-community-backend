@@ -67,7 +67,8 @@
     <!-- 项目编码 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Maven 相关版本号 -->
-    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
 
     <!-- 依赖包版本 -->
     <lombok.version>1.18.30</lombok.version>
@@ -351,6 +352,16 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <!-- 显式启用编译器插件，确保 Lombok 注解处理在所有模块生效 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
       <!-- 统一 revision 版本, 解决子模块打包无法解析 ${revision} 版本号问题 -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
