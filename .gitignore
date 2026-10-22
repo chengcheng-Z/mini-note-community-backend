@@ -40,6 +40,7 @@ build/
 ### Docker / local secrets ###
 .env
 .deployed-tag
+.deployed-tags/
 *.tar.gz
 ### Maven flatten plugin ###
 **/.flattened-pom.xml
